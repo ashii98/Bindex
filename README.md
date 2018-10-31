@@ -1,2 +1,2 @@
-# bindex
+# Bindex
 a simple chrome extension

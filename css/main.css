@@ -1,0 +1,35 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.uk-overlay-primary {
+    background: rgba(34,34,34,.7) !important;
+}
+input{
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid #e5e5e5 !important;
+}
+.uk-form-icon {
+    color: #fff !important;
+}
+input, input::placeholder{
+    color: #fff !important;
+}
+h1, h2, h3, h4, h5, h6{
+    color: #fff !important;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif !important;
+}
+.big-title{
+    font-size: 80px !important;
+    font-weight: bold !important;
+}
+#setting{
+    border: none !important;
+    margin: 0 20px 25px 0 !important;
+}
+
+.name, .time{
+    margin-top: 0 !important;
+}

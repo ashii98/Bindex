@@ -33,3 +33,16 @@ h1, h2, h3, h4, h5, h6{
 .name, .time{
     margin-top: 0 !important;
 }
+
+.download-btn{
+    padding: 15px 50px !important;
+}
+
+@media only screen and (min-width: 1600px) {
+    .big-title{
+        font-size: 150px !important;
+    }
+    .name{
+        font-size: 50px !important;
+    }
+}

@@ -19,22 +19,24 @@ const page = {
                 </div>
             </div>`,
 }
+let wallpaper;
 $(document).ready(function () {
     const username = Cookies.get('username');
+    setTimeout(function(){$('#search').focus()},500)
     $.ajax({
         url: 'https://api.unsplash.com/photos/random/',
+        type: 'GET',
         data: {
             client_id: 'd3482ac74e38aa25c6a6bf86a75d0e11ed797a97644619e3e19e01a571b4ea33',
             query: 'mountain'
         },
-        type: 'GET',
         success: function (data) {
             $('#background').append('<img id="background" src="' + data.urls.regular + '" height="100%" width="100%" alt="main background">')
+            wallpaper = data.links.download;
         },
         error: function () {
             const background_random = Math.floor(Math.random() * 2) + 1;
             $('#background').append('<img id="background" src="./img/' + background_random + '.jpg" height="100%" width="100%" alt="main background">')
-            $('#background').attr('src', background_random + '.jpg')
         }
     })
     if(username != undefined)
@@ -49,9 +51,13 @@ $(document).on('keypress', '#uesrname', function (e) {
         get_uesr_info()
     }
 })
+// download 
+$(document).on('click', '#download_btn', function () {
+    window.open(wallpaper);
+})
 // search
 $(document).on('keypress', '#search', function (e) {
-    if(e.keyCode == 13){
+    if(e.keyCode == 13 && e.target.value != ""){
         window.location.href = 'https://www.google.com/search?q=' + e.target.value;
     }
 })

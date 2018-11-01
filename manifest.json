@@ -1,8 +1,8 @@
 {
-    "name": "ashi's extention",
+    "name": "Bindex",
     "version": "1.0",
     "chrome_url_overrides": {
-        "newtab": "index.html"
+        "newtab": "./index.html"
     },
     "manifest_version": 2
 }

@@ -21,6 +21,7 @@ const page = {
 }
 let wallpaper;
 $(document).ready(function () {
+    $('.date').text(moment().format('l'))
     const username = Cookies.get('username');
     setTimeout(function(){$('#search').focus()},500)
     $.ajax({
@@ -79,9 +80,9 @@ function get_uesr_info() {
 }
 
 function get_current_time() {
-    $('.time').text(moment().format('LT'))
+    $('.time').html(moment().format('LT'))
     setInterval(function () {
-        $('.time').text(moment().format('LT'))
+        $('.time').html(moment().format('LT'))
     }, 1000)
 }
 

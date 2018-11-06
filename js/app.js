@@ -32,7 +32,7 @@ $(document).ready(function () {
         },
         success: function (data) {
             $('#background').append('<img id="background" src="' + data.urls.regular + '" height="100%" width="100%" alt="main background">')
-            wallpaper = data.links.download;
+            $('#download_btn').attr('href', data.links.download + '?force=true')
         },
         error: function () {
             const background_random = Math.floor(Math.random() * 2) + 1;
@@ -53,10 +53,7 @@ $(document).on('keypress', '#uesrname', function (e) {
         get_uesr_info()
     }
 })
-// download 
-$(document).on('click', '#download_btn', function () {
-    window.open(wallpaper);
-})
+
 // search
 $(document).on('keypress', '#search', function (e) {
     if(e.keyCode == 13 && e.target.value != ""){

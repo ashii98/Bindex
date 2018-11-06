@@ -10,7 +10,7 @@ const page = {
             </div>`,
     main: `<div class="uk-animation-slide-top-small uk-text-center">
                 <h1 class="big-title time"></h1>
-                <h2 class="name"></h2>
+                <h1 class="date uk-text-center" style="margin-top:-20px"></h1>
                 <div class="uk-margin uk-width-1-1">
                     <div class="uk-inline uk-width-1-1">
                         <span class="uk-form-icon" uk-icon="icon: search"></span>
@@ -21,7 +21,6 @@ const page = {
 }
 let wallpaper;
 $(document).ready(function () {
-    $('.date').text(moment().format('l'))
     const username = Cookies.get('username');
     setTimeout(function(){$('#search').focus()},500)
     $.ajax({
@@ -44,6 +43,8 @@ $(document).ready(function () {
         get_uesr_info();
     else
         $('#app').append(page.form)
+    $('.date').text(moment().format('dddd ll'))
+
 });
 
 $(document).on('keypress', '#uesrname', function (e) {
@@ -74,7 +75,7 @@ function get_uesr_info() {
                             </ul>
                         </div>
                     </div>`)
-    $('.name').text('Hi ' + Cookies.get('username'))
+    // $('.name').text('Hi ' + Cookies.get('username'))
     document.title = 'Hi ' + Cookies.get('username');
     get_current_time();
 }
